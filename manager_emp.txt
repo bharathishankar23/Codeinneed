@@ -1,0 +1,15 @@
+CREATE TABLE EMPLOYEE (
+  empId INTEGER,
+  empname varchar(10),
+  managerid INTEGER 
+);
+ 
+INSERT INTO EMPLOYEE VALUES (101, 'Ajith',105);
+INSERT INTO EMPLOYEE VALUES (102, 'Vijay',104);
+INSERT INTO EMPLOYEE VALUES (104, 'Vikram',106);
+INSERT INTO EMPLOYEE (empId,empname) VALUES (105, 'Surya');
+INSERT INTO EMPLOYEE (empId,empname) VALUES (106, 'Simbhu');
+
+SELECT e.empname, e.empId, m.empname as managername
+FROM  EMPLOYEE e LEFT OUTER JOIN  EMPLOYEE m
+ON e.managerid = m.empId
